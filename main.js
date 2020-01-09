@@ -1,6 +1,6 @@
 var version = "1.1";
 var savedPosition = "";
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyCAs3KCDI02uotVGU69GqjfsVI60ho4qbJIeGDt-vxTM9kgs6F/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyFziIgF6QT9Mxn1_oKsfknExuB-32YWfo-sXqtpyAdLgWz3Zor/exec'
 const form = document.forms['mainForm']
 requirements = Array.from(document.querySelectorAll('[required]')).splice(4);
 var loadingElement = '<svg class="spinner" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><style>.spinner{width:1em; animation: rotator 5s linear infinite;transform-origin: center;overflow: hidden;}@keyframes rotator{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}.path {stroke-dasharray:270;stroke-dashoffset:0;transform-origin:center;stroke: #000000;animation: dash 1.4s ease-in-out infinite;}@keyframes dash{0%{stroke-dashoffset:265;}50%{stroke-dashoffset:65;transform:rotate(90deg);}100%{stroke-dashoffset: 265;transform:rotate(360deg);}}</style><circle class="path" fill="none" stroke-width="20" stroke-linecap="butt" cx="50" cy="50" r="40"></circle></svg>';

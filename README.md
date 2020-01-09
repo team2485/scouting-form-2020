@@ -4,4 +4,4 @@
 
 The site is published [here](https://scout.team2485.org).
 
-The data is sumbitted to a google sheet [here](https://docs.google.com/spreadsheets/d/132yQ4GwxAV-DTLFa2bTO4BCDr50S08a8u8RoJZg8T-c).
+The data is submitted to a google sheet [here](https://docs.google.com/spreadsheets/d/132yQ4GwxAV-DTLFa2bTO4BCDr50S08a8u8RoJZg8T-c).
