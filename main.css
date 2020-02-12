@@ -19,6 +19,15 @@ legend{
     font-family: 'Oswald';
     text-transform: uppercase;
 }
+
+.fieldCanvas {
+    display: inline-block;
+    height: auto;
+    width: 100%;
+    cursor: pointer;
+    position:relative; z-index:2; top: -20px;
+}
+
 .form-display{
     margin-right: 20px; 
     margin-top: 10px; 
@@ -432,14 +441,6 @@ transition: max-height 2s ease-in; */
 
 label~input {
     margin-left: 5px;
-}
-
-.fieldCanvas {
-    max-width: 100%;
-    display: inline-block;
-    height: auto;
-    width: 300px;
-    cursor: pointer;
 }
 
 .centerDiv {

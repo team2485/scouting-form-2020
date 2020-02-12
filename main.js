@@ -5,6 +5,31 @@ const form = document.forms['mainForm']
 requirements = Array.from(document.querySelectorAll('[required]')).splice(4);
 var loadingElement = '<svg class="spinner" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><style>.spinner{width:1em; animation: rotator 5s linear infinite;transform-origin: center;overflow: hidden;}@keyframes rotator{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}.path {stroke-dasharray:270;stroke-dashoffset:0;transform-origin:center;stroke: #000000;animation: dash 1.4s ease-in-out infinite;}@keyframes dash{0%{stroke-dashoffset:265;}50%{stroke-dashoffset:65;transform:rotate(90deg);}100%{stroke-dashoffset: 265;transform:rotate(360deg);}}</style><circle class="path" fill="none" stroke-width="20" stroke-linecap="butt" cx="50" cy="50" r="40"></circle></svg>';
 
+var savedPosition = "";
+var canvas = document.getElementById("highPosAuto");
+var g2d = canvas.getContext("2d");
+var fieldImage = new Image();
+var flagImage = new Image(40, 40);
+fieldImage.src = "resources/field.png";
+flagImage.src = "resources/target.png";
+fieldImage.onload = function() {
+    g2d.drawImage(fieldImage, 0, 0, canvas.scrollWidth, canvas.scrollHeight);
+}
+function resizeCanvas(){
+    canvas.width = canvas.scrollWidth;
+    canvas.height = canvas.scrollWidth*(1445/2779);    
+}
+resizeCanvas();
+canvas.addEventListener("click", function(event) {
+    resizeCanvas();
+    g2d.drawImage(fieldImage, 0, 0, canvas.scrollWidth, canvas.scrollHeight);
+    g2d.drawImage(flagImage, event.pageX - canvas.offsetLeft - flagImage.width / 2, event.pageY - canvas.offsetTop - flagImage.height / 2, 40, 40);
+    savedPosition = "(" + (event.pageX - canvas.offsetLeft) / canvas.width + ";" + (event.pageY - canvas.offsetTop) / canvas.height + ")";
+    console.log(event);
+    console.log(savedPosition);
+    document.getElementById("reqAutoStartPos").value = savedPosition;
+});
+
 form.addEventListener('submit', e => {
     e.preventDefault()
     document.getElementById("submitButton").disabled = true;
@@ -68,23 +93,6 @@ function scoreDisplay(bettingScore) {
 }
 
 var score = getCookie("score");
-
-if (score == "") {
-    //if the cookie does not already exist
-    var newId = 200;
-    setCookie("score", newId, 20);
-    score = newId;
-}
-
-function betting(bettingScore, name1, name2, bet) {
-    //should add/take away points based on how much was bet, doesn't work yet
-    if (name1 == name2) {
-        //if the answer given to two inputs is the same
-        score += bet;
-    } else {
-        score -= bet;
-    }
-}
 
 function deselect(name) {
     //goes through and clears selected radio buttons with the given name
@@ -153,16 +161,6 @@ function dropDown() {
         document.getElementById("Level2D").value = "";
         document.getElementById("Level3D").value = "";
     }
-}
-//Set the URL to send a POST to. If on the server, go to the google script. Otherwise submit to the webpage
-
-function openBetting(id1, id2) {
-    var x = document.getElementById(id1);
-    var y = document.getElementById(id2);
-    x.classList.add("page-disappear");
-    y.classList.remove("page-disappear");
-
-
 }
 
 function setCookie(cname, cvalue, exdays) {

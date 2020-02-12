@@ -48,7 +48,7 @@
 
     </div>
     <br />
-    <div class="page-display form-display" id="form" >
+    <div class="page-display form-display" id="form">
         <form id="mainForm" class="pure-form pure-form-stacked" name="mainForm">
             <fieldset id="pre">
                 <legend>
@@ -57,159 +57,91 @@
                 <div class="pure-g">
                     <div class="pure-u-1-4 pure-u-sm-1">
                         <label for="ScoutName">Scout Name</label>
-                        <input id="ScoutName" name="ScoutName" class="pure-u-23-24" type="text" placeholder="Scout Name"
-                            required>
+                        <input id="ScoutName" name="ScoutName" class="pure-u-23-24" type="text" placeholder="Scout Name" required>
                     </div>
                     <div class="pure-u-1-4 pure-u-sm-1">
                         <label for="ScoutTeamNumber">Your Team #</label>
-                        <input id="ScoutTeamNumber" name="ScoutTeamNumber" class="pure-u-23-24" type="number"
-                            placeholder="Your Team #" required max="10000" min="0">
+                        <input id="ScoutTeamNumber" name="ScoutTeamNumber" class="pure-u-23-24" type="number" placeholder="Your Team #" required
+                            max="10000" min="0">
                     </div>
                     <!-- <div class="vertical-line"></div> -->
                     <div class="pure-u-1-4 pure-u-sm-1">
                         <label for="TeamNumber">Team # Scouted</label>
-                        <input id="TeamNumber" name="TeamNumber" class="pure-u-23-24" type="number"
-                            placeholder="Scout Team #" required max="10000" min="0">
+                        <input id="TeamNumber" name="TeamNumber" class="pure-u-23-24" type="number" placeholder="Scout Team #" required max="10000"
+                            min="0">
                     </div>
                     <div class="pure-u-1-4 pure-u-sm-1">
                         <label for="MatchNumber">Match #</label>
-                        <input id="MatchNumber" name="MatchNumber" class="pure-u-23-24" type="number"
-                            placeholder="Match #" required max="200" min="0">
+                        <input id="MatchNumber" name="MatchNumber" class="pure-u-23-24" type="number" placeholder="Match #" required max="200" min="0">
                     </div>
 
                 </div>
                 <label for="NoShow" class="pure-checkbox">
-                    <input type="hidden" name="NoShow" value="0"><input id="NoShow" name="NoShow" type="checkbox"
-                        value="NoShow" onclick="this.previousSibling.value=1-this.previousSibling.value"> Didn't Show Up
+                    <input type="hidden" name="NoShow" value="0">
+                    <input id="NoShow" name="NoShow" type="checkbox" value="NoShow" onclick="this.previousSibling.value=1-this.previousSibling.value"> Didn't Show Up
                 </label>
             </fieldset>
             <fieldset id="auto">
                 <legend>
-                    <a id="Auto">Sandstorm</a>
+                    <a id="Auto">Auto</a>
                 </legend>
-                <div class="center">
-                    <span>
-                        Starting Level:
-                    </span>
-                    <label style="display: inline">
-                        <input id="start-one" type="radio" name="StartLevel" value="1" required> Level 1
-                    </label>
-                    <label style="display: inline">
-                        <input id="start-two" type="radio" name="StartLevel" value="2"> Level 2
-                    </label>
-                    <label class="pure-checkbox">
-                        Crossed Line:
-                        <input type="hidden" name="Crossed" value="0"><input id="NoShow" name="Crossed" type="checkbox"
-                            value="1" onclick="this.previousSibling.value=1-this.previousSibling.value">
-                    </label>
+                <div class="center pure-g">
+                    <div class="pure-u-1-2">
+                        <label class="pure-checkbox">
+                            Crossed Line:
+                            <input type="hidden" name="Crossed" value="0">
+                            <input id="NoShow" name="Crossed" type="checkbox" value="1" onclick="this.previousSibling.value=1-this.previousSibling.value">
+                        </label>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <label class="pure-checkbox">
+                            Loaded Extra Balls:
+                            <input type="hidden" name="ExtraBalls" value="0">
+                            <input id="NoShow" name="ExtraBalls" type="checkbox" value="1" onclick="this.previousSibling.value=1-this.previousSibling.value">
+                        </label>
+                    </div>
                 </div>
                 <hr>
                 <div class="pure-g">
-                    <div class="pure-u-1-2">
+                    <div class="centerDiv pure-u-11-24 pure-u-sm-1">
+                        <p class="auto">Higher Balls Firing Point</p>
+                        <input id="reqAutoStartPos" name="highPosAuto" required style="visibility: hidden" tabindex="-1" style="position:relative; z-index:1; margin:0; margin-left:auto;margin-right:auto;"> </input>
+                        <canvas id="highPosAuto" class="fieldCanvas"> </canvas>
+                    </div>
+                    <div class="pure-u-1-24 pure-u-sm-1">
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1">
                         <div class="center">
-                            <span>Cargo</span>
+                            <span>Preloaded Balls</span>
                         </div>
                         <hr>
-                        <div class="pure-g">
-                            <div class="pure-u-1-2">
-                                <label for="">
-                                    <input id="" name="Rocket3CargoS" min="0" max="6" class="pure-u-23-24" type="number"
-                                        placeholder="Lvl 3 Placement" style="background: #f3fff3;">
-                                </label>
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket3CargoSD" min="0" max="9" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 3 Drop" style="background: #fff3f3;">
-                            </div>
-                            <br>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket2CargoS" min="0" max="6" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 2 Placement" style="background: #f3fff3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket2CargoSD" min="0" max="9" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 2 Drop" style="background: #fff3f3;">
-                            </div>
-                            <br>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket1CargoS" min="0" max="6" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 1 Placement" style="background: #f3fff3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket1CargoSD" min="0" max="9" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 1 Drop" style="background: #fff3f3;">
-                            </div>
+                        <div class="pure-u-1-1">
+                            <label for=""></label>
+                            <input id="" name="BallsPreloaded" min="0" max="3" class="pure-u-23-24" type="number" placeholder="Balls Preloaded" style="background: #fffff3;">
                         </div>
-                    </div>
-                    <div class="pure-u-1-2">
                         <div class="center">
-                            <span>Hatch</span>
+                            <span>Lower Balls</span>
                         </div>
                         <hr>
-                        <div class="pure-g">
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket3HatchS" min="0" max="4" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 3 Placement" style="background: #fffff3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket3HatchSD" min="0" max="9" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 3 Drop" style="background: #fff3f3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket2HatchS" min="0" max="4" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 2 Placement" style="background: #fffff3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket2HatchSD" min="0" max="9" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 2 Drop" style="background: #fff3f3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket1HatchS" min="0" max="4" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 1 Placement" style="background: #fffff3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket1HatchSD" min="0" max="9" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 1 Drop" style="background: #fff3f3;">
-                            </div>
+                        <div class="pure-u-1-1">
+                            <label for=""></label>
+                            <input id="" name="BallsLowerAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Successful Balls" style="background: #fffff3;">
                         </div>
-                    </div>
-                    <div class="center pure-u-1" style="margin-top:10px">
-                        <span>Cargo Ship</span>
-                    </div>
-                    <hr>
-                    <div class="pure-u-1-2">
-                        <div class="pure-g">
-                            <label class="pure-u-1-2">
-                                <input name="ShipCargoS" min="0" max="6" class="pure-u-23-24" type="number"
-                                    placeholder="Cargo Placement" style="background: #f3fff3">
-                            </label>
-                            <label class="pure-u-1-2">
-                                <input name="ShipCargoSD" min="0" max="9" class="pure-u-23-24" type="number"
-                                    placeholder="Cargo Drop" style="background: #fff3f3">
-                            </label>
+                        <div class="pure-u-1-1">
+                            <label for=""></label>
+                            <input id="" name="BallsLowerFailAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Missed Balls" style="background: #fffff3;">
                         </div>
-                    </div>
-                    <div class="pure-u-1-2">
-                        <div class="pure-g">
-                            <label class="pure-u-1-2">
-                                <input name="ShipHatchS" min="0" max="8" class="pure-u-23-24" type="number"
-                                    placeholder="Hatch Placement" style="background: #fffff3">
-                            </label>
-                            <label class="pure-u-1-2">
-                                <input name="ShipHatchSD" min="0" max="9" class="pure-u-23-24" type="number"
-                                    placeholder="Hatch Drop" style="background: #fff3f3">
-                            </label>
+                        <div class="center">
+                            <span>Upper Balls</span>
+                        </div>
+                        <hr>
+                        <div class="pure-u-1-1">
+                            <label for=""></label>
+                            <input id="" name="UpperBallsAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Successful Balls" style="background: #fffff3;">
+                        </div>
+                        <div class="pure-u-1-1">
+                            <label for=""></label>
+                            <input id="" name="UpperBallsAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Missed Balls" style="background: #fffff3;">
                         </div>
                     </div>
                 </div>
@@ -219,111 +151,40 @@
                     <a id="Teleop">Teleop</a>
                 </legend>
                 <div class="pure-g">
-                    <div class="pure-u-1-2">
-                        <div class="center">
-                            <span>Cargo</span>
+                        <div class="centerDiv pure-u-11-24 pure-u-sm-1">
+                            <p class="auto">Higher Balls Firing Point</p>
+                            <input id="reqHighPos" name="highPos" required style="visibility: hidden" tabindex="-1" style="position:relative; z-index:1; margin:0; margin-left:auto;margin-right:auto;"> </input>
+                            <canvas id="highPos" class="fieldCanvas"> </canvas>
                         </div>
-                        <hr>
-                        <div class="pure-g">
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket3Cargo" min="0" max="6" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 3 Placement" style="background: #f3fff3;">
+                        <div class="pure-u-1-24 pure-u-sm-1">
+                        </div>
+                        <div class="pure-u-1-2 pure-u-sm-1"> 
+                            <div class="center">
+                                <span>Lower Balls</span>
                             </div>
-                            <div class="pure-u-1-2">
+                            <hr>
+                            <div class="pure-u-1-1">
                                 <label for=""></label>
-                                <input id="" name="Rocket3CargoD" min="0" max="20" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 3 Drop" style="background: #fff3f3;">
+                                <input id="" name="BallsLowerAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Successful Balls" style="background: #fffff3;">
                             </div>
-                            <div class="pure-u-1-2">
+                            <div class="pure-u-1-1">
                                 <label for=""></label>
-                                <input id="" name="Rocket2Cargo" min="0" max="6" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 2 Placement" style="background: #f3fff3;">
+                                <input id="" name="BallsLowerFailAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Missed Balls" style="background: #fffff3;">
                             </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket2CargoD" min="0" max="20" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 2 Drop" style="background: #fff3f3;">
+                            <div class="center">
+                                <span>Upper Balls</span>
                             </div>
-                            <div class="pure-u-1-2">
+                            <hr>
+                            <div class="pure-u-1-1">
                                 <label for=""></label>
-                                <input id="" name="Rocket1Cargo" min="0" max="6" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 1 Placement" style="background: #f3fff3;">
+                                <input id="" name="UpperBallsAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Successful Balls" style="background: #fffff3;">
                             </div>
-                            <div class="pure-u-1-2">
+                            <div class="pure-u-1-1">
                                 <label for=""></label>
-                                <input id="" name="Rocket1CargoD" min="0" max="20" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 1 Drop" style="background: #fff3f3;">
+                                <input id="" name="UpperBallsAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Missed Balls" style="background: #fffff3;">
                             </div>
                         </div>
                     </div>
-                    <div class="pure-u-1-2">
-                        <div class="center">
-                            <span>Hatch</span>
-                        </div>
-                        <hr>
-                        <div class="pure-g">
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket3Hatch" min="0" max="4" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 3 Placement" style="background: #fffff3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket3HatchD" min="0" max="20" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 3 Drop" style="background: #fff3f3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket2Hatch" min="0" max="4" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 2 Placement" style="background: #fffff3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket2HatchD" min="0" max="20" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 2 Drop" style="background: #fff3f3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket1Hatch" min="0" max="4" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 1 Placement" style="background: #fffff3;">
-                            </div>
-                            <div class="pure-u-1-2">
-                                <label for=""></label>
-                                <input id="" name="Rocket1HatchD" min="0" max="20" class="pure-u-23-24" type="number"
-                                    placeholder="Lvl 1 Drop" style="background: #fff3f3;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="center pure-u-1" style="margin-top:10px">
-                        <span>Cargo Ship</span>
-                    </div>
-                    <hr>
-                    <div class="pure-u-1-2">
-                        <div class="pure-g">
-                            <label class="pure-u-1-2">
-                                <input name="ShipCargo" min="0" max="8" class="pure-u-23-24" type="number"
-                                    placeholder="Cargo Placement" style="background: #f3fff3">
-                            </label>
-                            <label class="pure-u-1-2">
-                                <input name="ShipCargoD" min="0" max="20" class="pure-u-23-24" type="number"
-                                    placeholder="Cargo Drop" style="background: #fff3f3">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="pure-u-1-2">
-                        <div class="pure-g">
-                            <label class="pure-u-1-2">
-                                <input name="ShipHatch" min="0" max="8" class="pure-u-23-24" type="number"
-                                    placeholder="Hatch Placement" style="background: #fffff3">
-                            </label>
-                            <label class="pure-u-1-2">
-                                <input name="ShipHatchD" min="0" max="20" class="pure-u-23-24" type="number"
-                                    placeholder="Hatch Drop" style="background: #fff3f3">
-                            </label>
-                        </div>
-                    </div>
-                </div>
             </fieldset>
             <div class="pure-g">
                 <fieldset class="pure-u-1-3 pure-u-md-1 pure-g" id="end">
@@ -344,50 +205,41 @@
                             <input id="endGame-two" type="radio" name="Level" value="3"> Level 3
                         </label>
                         <label for="Boosted" class="pure-checkbox">
-                            <input type="hidden" name="Boosted" value="0"><input id="Boosted" type="checkbox"
-                                name="Boosted" value="1"
-                                onclick="this.previousSibling.value=1-this.previousSibling.value"> Were they boosted?
+                            <input type="hidden" name="Boosted" value="0">
+                            <input id="Boosted" type="checkbox" name="Boosted" value="1" onclick="this.previousSibling.value=1-this.previousSibling.value"> Were they boosted?
                         </label>
                         <label for="Boosts" class="pure-checkbox">
-                            <input type="hidden" name="Boost" value="0"><input id="Boosts" type="checkbox" name="Boost"
-                                value="1" onchange="dropDown()"
-                                onclick="this.previousSibling.value=1-this.previousSibling.value"> Did the Robot boost
-                            other robots?
+                            <input type="hidden" name="Boost" value="0">
+                            <input id="Boosts" type="checkbox" name="Boost" value="1" onchange="dropDown()" onclick="this.previousSibling.value=1-this.previousSibling.value"> Did the Robot boost other robots?
                         </label>
                         <div id="expanding1" class="expand-before">
                             <div class="pure-g">
                                 <div class="pure-u-1-2 expanding">
-                                    <input id="Level1" class="pure-u-23-24 expanding" name="LevelOneBoosts"
-                                        type="number" min="0" max="2" placeholder="# pushed onto level 1"
+                                    <input id="Level1" class="pure-u-23-24 expanding" name="LevelOneBoosts" type="number" min="0" max="2" placeholder="# pushed onto level 1"
                                         style="background: #f3fff3;">
                                 </div>
                                 <div class="pure-u-1-2 expanding">
-                                    <input id="Level1D" class="pure-u-23-24 expanding" name="LevelOneDrops"
-                                        type="number" min="0" max="2" placeholder="# fails at level 1"
+                                    <input id="Level1D" class="pure-u-23-24 expanding" name="LevelOneDrops" type="number" min="0" max="2" placeholder="# fails at level 1"
                                         style="background: #fff3f3;">
                                 </div>
                             </div>
                             <div class="pure-g">
                                 <div class="pure-u-1-2 expanding">
-                                    <input id="Level2" class="pure-u-23-24 expanding" name="LevelTwoBoosts"
-                                        type="number" min="0" max="2" placeholder="# boosted to level 2"
+                                    <input id="Level2" class="pure-u-23-24 expanding" name="LevelTwoBoosts" type="number" min="0" max="2" placeholder="# boosted to level 2"
                                         style="background: #f3fff3;">
                                 </div>
                                 <div class="pure-u-1-2 expanding">
-                                    <input id="Level2D" class="pure-u-23-24 expanding" name="LevelTwoDrops"
-                                        type="number" min="0" max="2" placeholder="# fails at level 2"
+                                    <input id="Level2D" class="pure-u-23-24 expanding" name="LevelTwoDrops" type="number" min="0" max="2" placeholder="# fails at level 2"
                                         style="background: #fff3f3;">
                                 </div>
                             </div>
                             <div class="pure-g">
                                 <div class="pure-u-1-2 expanding">
-                                    <input id="Level3" class="pure-u-23-24 expanding" name="LevelThreeBoosts"
-                                        type="number" min="0" max="2" placeholder="# boosted to level 3"
+                                    <input id="Level3" class="pure-u-23-24 expanding" name="LevelThreeBoosts" type="number" min="0" max="2" placeholder="# boosted to level 3"
                                         style="background: #f3fff3;">
                                 </div>
                                 <div class="pure-u-1-2 expanding">
-                                    <input id="Level3D" class="pure-u-23-24 expanding" name="LevelThreeDrops"
-                                        type="number" min="0" max="2" placeholder="# fails at level 3"
+                                    <input id="Level3D" class="pure-u-23-24 expanding" name="LevelThreeDrops" type="number" min="0" max="2" placeholder="# fails at level 3"
                                         style="background: #fff3f3;">
                                 </div>
                             </div>
@@ -407,65 +259,47 @@
                         <div class="rating-outer">
                             <legend class="s-legend">Cargo Intake</legend>
                             <fieldset class="rating relative">
-                                <input id="CargoIntake" name="CargoIntake" type="number" value="0" class="hiddenInput"
-                                    tabindex="-1" min="0" max="4">
-                                <input type="radio" id="star4" name="CargoIntakeSub"
-                                    onclick="starInput('CargoIntake', 4)" />
+                                <input id="CargoIntake" name="CargoIntake" type="number" value="0" class="hiddenInput" tabindex="-1" min="0" max="4">
+                                <input type="radio" id="star4" name="CargoIntakeSub" onclick="starInput('CargoIntake', 4)" />
                                 <label class="full" for="star4" title="Great - 4 stars"></label>
-                                <input type="radio" id="star3" name="CargoIntakeSub"
-                                    onclick="starInput('CargoIntake', 3)" />
+                                <input type="radio" id="star3" name="CargoIntakeSub" onclick="starInput('CargoIntake', 3)" />
                                 <label class="full" for="star3" title="Above average - 3 stars"></label>
-                                <input type="radio" id="star2" name="CargoIntakeSub"
-                                    onclick="starInput('CargoIntake', 2)" />
+                                <input type="radio" id="star2" name="CargoIntakeSub" onclick="starInput('CargoIntake', 2)" />
                                 <label class="full" for="star2" title="Below Average - 2 stars"></label>
-                                <input type="radio" id="star1" name="CargoIntakeSub"
-                                    onclick="starInput('CargoIntake', 1)" />
+                                <input type="radio" id="star1" name="CargoIntakeSub" onclick="starInput('CargoIntake', 1)" />
                                 <label class="full" for="star1" title="Incapable - 1 star"></label>
                             </fieldset>
-                            <div class="button-secondary pure-button"
-                                onclick="deselect('CargoIntakeSub'); starInput('CargoIntake', 0)">Clear</div>
+                            <div class="button-secondary pure-button" onclick="deselect('CargoIntakeSub'); starInput('CargoIntake', 0)">Clear</div>
                         </div>
                         <div class="rating-outer">
                             <legend class="s-legend">Hatch Intake</legend>
                             <fieldset class="rating relative">
-                                <input id="HatchIntake" name="HatchIntake" type="number" value="0" class="hiddenInput"
-                                    tabindex="-1" min="0" max="4">
-                                <input type="radio" id="hatchStar4" name="HatchIntakeSub"
-                                    onclick="starInput('HatchIntake', 4)" />
+                                <input id="HatchIntake" name="HatchIntake" type="number" value="0" class="hiddenInput" tabindex="-1" min="0" max="4">
+                                <input type="radio" id="hatchStar4" name="HatchIntakeSub" onclick="starInput('HatchIntake', 4)" />
                                 <label class="full" for="hatchStar4" title="Great - 4 stars"></label>
-                                <input type="radio" id="hatchStar3" name="HatchIntakeSub"
-                                    onclick="starInput('HatchIntake', 3)" />
+                                <input type="radio" id="hatchStar3" name="HatchIntakeSub" onclick="starInput('HatchIntake', 3)" />
                                 <label class="full" for="hatchStar3" title="Above average - 3 stars"></label>
-                                <input type="radio" id="hatchStar2" name="HatchIntakeSub"
-                                    onclick="starInput('HatchIntake', 2)" />
+                                <input type="radio" id="hatchStar2" name="HatchIntakeSub" onclick="starInput('HatchIntake', 2)" />
                                 <label class="full" for="hatchStar2" title="Below Average - 2 stars"></label>
-                                <input type="radio" id="hatchStar1" name="HatchIntakeSub"
-                                    onclick="starInput('HatchIntake', 1)" />
+                                <input type="radio" id="hatchStar1" name="HatchIntakeSub" onclick="starInput('HatchIntake', 1)" />
                                 <label class="full" for="hatchStar1" title="Incapable - 1 star"></label>
                             </fieldset>
-                            <div class="button-secondary pure-button"
-                                onclick="deselect('HatchIntakeSub'); starInput('HatchIntake', 0)">Clear</div>
+                            <div class="button-secondary pure-button" onclick="deselect('HatchIntakeSub'); starInput('HatchIntake', 0)">Clear</div>
                         </div>
                         <div class="rating-outer">
                             <legend class="s-legend">Ground Intake (Hatch)</legend>
                             <fieldset class="rating relative">
-                                <input id="GroundIntake" name="GroundIntake" type="number" value="0" class="hiddenInput"
-                                    tabindex="-1" min="0" max="4">
-                                <input type="radio" id="groundStar4" name="GroundIntakeSub"
-                                    onclick="starInput('GroundIntake', 4)" />
+                                <input id="GroundIntake" name="GroundIntake" type="number" value="0" class="hiddenInput" tabindex="-1" min="0" max="4">
+                                <input type="radio" id="groundStar4" name="GroundIntakeSub" onclick="starInput('GroundIntake', 4)" />
                                 <label class="full" for="groundStar4" title="Great - 4 stars"></label>
-                                <input type="radio" id="groundStar3" name="GroundIntakeSub"
-                                    onclick="starInput('GroundIntake', 3)" />
+                                <input type="radio" id="groundStar3" name="GroundIntakeSub" onclick="starInput('GroundIntake', 3)" />
                                 <label class="full" for="groundStar3" title="Above average - 3 stars"></label>
-                                <input type="radio" id="groundStar2" name="GroundIntakeSub"
-                                    onclick="starInput('GroundIntake', 2)" />
+                                <input type="radio" id="groundStar2" name="GroundIntakeSub" onclick="starInput('GroundIntake', 2)" />
                                 <label class="full" for="groundStar2" title="Below Average - 2 stars"></label>
-                                <input type="radio" id="groundStar1" name="GroundIntakeSub"
-                                    onclick="starInput('GroundIntake', 1)" />
+                                <input type="radio" id="groundStar1" name="GroundIntakeSub" onclick="starInput('GroundIntake', 1)" />
                                 <label class="full" for="groundStar1" title="Incapable - 1 star"></label>
                             </fieldset>
-                            <div class="button-secondary pure-button"
-                                onclick="deselect('GroundIntakeSub'); starInput('GroundIntake', 0)">Clear</div>
+                            <div class="button-secondary pure-button" onclick="deselect('GroundIntakeSub'); starInput('GroundIntake', 0)">Clear</div>
                         </div>
                         <!-- <div class="rating-outer">
                             <legend>Driver Efficiency</legend>
@@ -485,44 +319,32 @@
                         <div class="rating-outer">
                             <legend class="s-legend">Maneuverability</legend>
                             <fieldset class="rating relative">
-                                <input id="Maneuverability" name="Maneuverability" type="number" value="0"
-                                    class="hiddenInput" tabindex="-1" min="0" max="4">
-                                <input type="radio" id="maneuverabilityStar4" name="ManeuverabilitySub"
-                                    onclick="starInput('Maneuverability', 4)" />
+                                <input id="Maneuverability" name="Maneuverability" type="number" value="0" class="hiddenInput" tabindex="-1" min="0" max="4">
+                                <input type="radio" id="maneuverabilityStar4" name="ManeuverabilitySub" onclick="starInput('Maneuverability', 4)" />
                                 <label class="full" for="maneuverabilityStar4" title="Great - 4 stars"></label>
-                                <input type="radio" id="maneuverabilityStar3" name="ManeuverabilitySub"
-                                    onclick="starInput('Maneuverability', 3)" />
+                                <input type="radio" id="maneuverabilityStar3" name="ManeuverabilitySub" onclick="starInput('Maneuverability', 3)" />
                                 <label class="full" for="maneuverabilityStar3" title="Above average - 3 stars"></label>
-                                <input type="radio" id="maneuverabilityStar2" name="ManeuverabilitySub"
-                                    onclick="starInput('Maneuverability', 2)" />
+                                <input type="radio" id="maneuverabilityStar2" name="ManeuverabilitySub" onclick="starInput('Maneuverability', 2)" />
                                 <label class="full" for="maneuverabilityStar2" title="Below Average - 2 stars"></label>
-                                <input type="radio" id="maneuverabilityStar1" name="ManeuverabilitySub"
-                                    onclick="starInput('Maneuverability', 1)" />
+                                <input type="radio" id="maneuverabilityStar1" name="ManeuverabilitySub" onclick="starInput('Maneuverability', 1)" />
                                 <label class="full" for="maneuverabilityStar1" title="Incapable - 1 star"></label>
                             </fieldset>
-                            <div class="button-secondary pure-button"
-                                onclick="deselect('ManeuverabilitySub'); starInput('Maneuverability', 0)">Clear</div>
+                            <div class="button-secondary pure-button" onclick="deselect('ManeuverabilitySub'); starInput('Maneuverability', 0)">Clear</div>
                         </div>
                         <div class="rating-outer">
                             <legend class="s-legend">Defense</legend>
                             <fieldset class="rating relative">
-                                <input id="Defense" name="Defense" type="number" class="hiddenInput" value="0"
-                                    tabindex="-1" min="0" max="4">
-                                <input type="radio" id="defenseStar4" name="DefenseSub"
-                                    onclick="starInput('Defense', 4)">
+                                <input id="Defense" name="Defense" type="number" class="hiddenInput" value="0" tabindex="-1" min="0" max="4">
+                                <input type="radio" id="defenseStar4" name="DefenseSub" onclick="starInput('Defense', 4)">
                                 <label class="full" for="defenseStar4" title="Great - 4 stars"></label>
-                                <input type="radio" id="defenseStar3" name="DefenseSub"
-                                    onclick="starInput('Defense', 3)">
+                                <input type="radio" id="defenseStar3" name="DefenseSub" onclick="starInput('Defense', 3)">
                                 <label class="full" for="defenseStar3" title="Above average - 3 stars"></label>
-                                <input type="radio" id="defenseStar2" name="DefenseSub"
-                                    onclick="starInput('Defense', 2)">
+                                <input type="radio" id="defenseStar2" name="DefenseSub" onclick="starInput('Defense', 2)">
                                 <label class="full" for="defenseStar2" title="Below Average - 2 stars"></label>
-                                <input type="radio" id="defenseStar1" name="DefenseSub"
-                                    onclick="starInput('Defense', 1)">
+                                <input type="radio" id="defenseStar1" name="DefenseSub" onclick="starInput('Defense', 1)">
                                 <label class="full" for="defenseStar1" title="Incapable - 1 star"></label>
                             </fieldset>
-                            <div class="button-secondary pure-button"
-                                onclick="deselect('DefenseSub'); starInput('Defense', 0)">Clear</div>
+                            <div class="button-secondary pure-button" onclick="deselect('DefenseSub'); starInput('Defense', 0)">Clear</div>
                         </div>
                     </div>
                 </fieldset>
@@ -532,31 +354,25 @@
                     <a id="other">Other Info</a>
                 </legend>
                 <label for="Breakdown" class="pure-checkbox" style="margin-top: 0px;">
-                    <input id="Breakdown" type="hidden" name="Breakdown" value="0"><input name="Breakdown"
-                        type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"> Robot Broke
-                    Down
+                    <input id="Breakdown" type="hidden" name="Breakdown" value="0">
+                    <input name="Breakdown" type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"> Robot Broke Down
                 </label>
                 <label for="Fall" class="pure-checkbox">
                     <input id="fallInput" type="hidden" name="Fall" value="0">
-                    <input id="Fall" type="checkbox" name="Fall" onchange="dropDown()"
-                        onclick="document.getElementById('fallInput').value=0"> Robot Fell
+                    <input id="Fall" type="checkbox" name="Fall" onchange="dropDown()" onclick="document.getElementById('fallInput').value=0"> Robot Fell
                 </label>
                 <div id="expandingFall" class="expand-before" style="float:left;">
                     <label class="pure-radio">
-                        <input id="Fall1" class="expanding" name="Fall" type="radio"
-                            onclick="document.getElementById('fallInput').value=1"> During Sandstorm
+                        <input id="Fall1" class="expanding" name="Fall" type="radio" onclick="document.getElementById('fallInput').value=1"> During Sandstorm
                     </label>
                     <label class="pure-radio">
-                        <input id="Fall2" class="expanding" name="Fall" type="radio"
-                            onclick="document.getElementById('fallInput').value=2"> During Teleop
+                        <input id="Fall2" class="expanding" name="Fall" type="radio" onclick="document.getElementById('fallInput').value=2"> During Teleop
                     </label>
                     <label class="pure-radio">
-                        <input id="Fall3" class="expanding" name="Fall" type="radio"
-                            onclick="document.getElementById('fallInput').value=3"> During Climbing Attempt
+                        <input id="Fall3" class="expanding" name="Fall" type="radio" onclick="document.getElementById('fallInput').value=3"> During Climbing Attempt
                     </label>
                 </div>
-                <textarea class="pure-input-1" name="Comments" placeholder="Comments"
-                    style="background:#F5FFFF;"></textarea>
+                <textarea class="pure-input-1" name="Comments" placeholder="Comments" style="background:#F5FFFF;"></textarea>
             </fieldset>
             <!-- <button type="submit" class="pure-button pure-button-primary" onclick="betting(bettingScore,'team', 'teamWin')">Submit Data</button> -->
             <button type="submit" id="submitButton" class="pure-button pure-button-primary">Submit Data</button>
