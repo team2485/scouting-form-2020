@@ -211,7 +211,8 @@
                         <br>
                         <label for="ClimbAttempted" class="pure-checkbox">
                             <input type="hidden" name="ClimbAttempted" value="0"><input id="ClimbAttempted" type="checkbox" name="ClimbAttempted" onchange="dropDown('expandingAttempted', this)" onclick="this.previousSibling.value=1-this.previousSibling.value"> Climb attempted?
-                        </label><br>
+                        </label>
+                        <br>
                         <label for="ClimbSuccess" class="pure-checkbox fade-out" name="expandingAttempted" style="margin-left: 30px">
                             <input type="hidden" name="ClimbSuccess" value="0"><input id="ClimbSuccess" type="checkbox" name="ClimbSuccess" onclick="this.previousSibling.value=1-this.previousSibling.value"> Climb succeeded?
                         </label>
@@ -221,6 +222,7 @@
                         <label for="BuddyClimbLifted" class="pure-checkbox">
                             <input type="hidden" name="BuddyClimbLifted" value="0"><input id="BuddyClimbLifted" type="checkbox" name="BuddyClimbLifted" onclick="this.previousSibling.value=1-this.previousSibling.value"> Did they lift another robot?
                         </label>
+                        <br>
                         <label for="BuddyClimbPickedUp" class="pure-checkbox">
                             <input type="hidden" name="BuddyClimbPickedUp" value="0"><input id="BuddyClimbPickedUp" type="checkbox" name="BuddyClimbPickedUp" onclick="this.previousSibling.value=1-this.previousSibling.value"> Were they picked up?
                         </label>

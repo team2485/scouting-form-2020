@@ -373,6 +373,7 @@ transition: max-height 2s ease-out; */
     opacity: 0;
     /* transition: all .75s ease; */
     position: absolute;
+    pointer-events: none;
 }
 
 .fade-in {
