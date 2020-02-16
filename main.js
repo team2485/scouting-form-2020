@@ -1,7 +1,7 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzhRJxAtAKLB1_vzGLINg_CdEE_1ecpq7sO2wE5eWTtVPCketY/exec'
 const form = document.forms['mainForm']
 requirements = Array.from(document.querySelectorAll('[required]'));
-requirements.splice(1,4);
+requirements.splice(1, 4);
 var loadingElement = '<svg class="spinner" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><style>.spinner{width:1em; animation: rotator 5s linear infinite;transform-origin: center;overflow: hidden;}@keyframes rotator{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}.path {stroke-dasharray:270;stroke-dashoffset:0;transform-origin:center;stroke: #000000;animation: dash 1.4s ease-in-out infinite;}@keyframes dash{0%{stroke-dashoffset:265;}50%{stroke-dashoffset:65;transform:rotate(90deg);}100%{stroke-dashoffset: 265;transform:rotate(360deg);}}</style><circle class="path" fill="none" stroke-width="20" stroke-linecap="butt" cx="50" cy="50" r="40"></circle></svg>';
 
 var savedPositionPre = "";
@@ -177,15 +177,18 @@ function dropDown(name, parent) {
         for (var i = 0; i < x.length; i++) {
             x[i].classList.toggle("fade-out");
             x[i].classList.toggle("fade-in");
+            x[i].parentNode.insertBefore(document.createElement("br"), x[i].nextSibling);
         }
     } else {
         for (var i = 0; i < x.length; i++) {
             x[i].checked = false;
             x[i].classList.toggle("fade-out");
             x[i].classList.toggle("fade-in");
+            x[i].parentNode.removeChild(x[i].nextElementSibling);
         }
     }
 }
+
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
