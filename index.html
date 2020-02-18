@@ -16,7 +16,7 @@
 
 <body>
     <div class="pure-menu pure-menu-horizontal" style="position: fixed; top:0; z-index: 5; height:50px; background-color: black; color: #FFD900; font-family: 'Oswald'">
-        <img style="display:inline-block; vertical-align: top; padding-left: 10px; padding-top: 5px; height: 40px" src="resources/icon-on-black.png">
+        <img style="display:inline-block; vertical-align: top; padding-left: 10px; padding-top: 5px; height: 40px" src="resources/icon-on-black.png"></img>
         <ul class="pure-menu-list" style="display:inline-block; vertical-align: top; padding-top: 5px; text-transform: uppercase">
             <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
                 <a id="menuLink1" class="pure-menu-link" onclick="openBetting('betting', 'form')">2020 Scouting</a>
@@ -49,7 +49,7 @@
     </div>
     <br />
     <div class="page-display form-display" id="form">
-        <form id="mainForm" class="pure-form pure-form-stacked" name="mainForm">
+        <form id="mainForm" class="pure-form pure-form-stacked container" name="mainForm">
             <fieldset id="pre">
                 <legend>
                     <a id="Info">Pre-Match</a>
@@ -83,11 +83,31 @@
                         </div>
                     </div>
                 </div>
+                <hr>
+                <div class="center">
+                    <div>
+                        <span>Preloaded Balls</span>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1">
+                        <div class="pure-g relative">
+                                <div class="pure-u-20-24">
+                                    <label for=""></label>
+                                    <input id="BallsPreloaded" name="BallsPreloaded" min="0" max="3" class="pure-u-1" type="number" placeholder="Balls Preloaded" style="background: #fffff3;">
+                                </div>
+                                <div class="pure-u-4-24 ">
+                                    <div class="pure-g plus-minus">
+                                        <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('BallsPreloaded')"></img>
+                                        <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('BallsPreloaded')"></img>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
                 <div class="center">
                     <label for="NoShow" class="pure-checkbox centerDiv">
                         <input type="hidden" name="NoShow" value="0"><input id="NoShow" name="NoShow" type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"> Didn't Show Up
-                    </label
-                ></div>
+                    </label>
+                </div>
             </fieldset>
             <fieldset id="auto">
                 <legend>
@@ -115,42 +135,66 @@
                             <input id="reqPosAuto" name="AutoScoring" style="position:relative; z-index:1; margin:0; margin-left:auto;margin-right:auto; top: 20px"> </input>
                             <canvas id="posAuto" class="fieldCanvas"> </canvas>
                         </div>
-                        <div class="centerDiv">
+                        <div class="centerDiv" style="margin-bottom: 1em">
                             <button type="button" id="autoSubmit" onclick="parseAutoData();" class="pure-button pure-button-primary">Submit Shots</button>
                         </div>
                     </div>
                     <div class="pure-u-1-2 pure-u-sm-1">
                         <div class="center">
-                            <span>Preloaded Balls</span>
-                        </div>
-                        <hr>
-                        <div class="pure-u-1-1">
-                            <label for=""></label>
-                            <input name="BallsPreloaded" min="0" max="3" class="pure-u-23-24" type="number" placeholder="Balls Preloaded" style="background: #fffff3;">
-                        </div>
-                        <div class="center">
                             <span>Upper Balls</span>
                         </div>
                         <hr>
-                        <div class="pure-u-1-1">
-                            <label for="upperAuto"></label>
-                            <input id="upperAuto" name="" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                        <div class="pure-g relative">
+                            <div class="pure-u-20-24">
+                                <label for="upperAuto"></label>
+                                <input id="upperAuto" name="" min="0" max="5" class="pure-u-1" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                            </div>
+                            <div class="pure-u-4-24 ">
+                                <div class="pure-g plus-minus">
+                                    <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('upperAuto')"></img>
+                                    <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('upperAuto')"></img>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pure-u-1-1">
-                            <label for="upperAutoFail"></label>
-                            <input id="upperAutoFail" name="" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                        <div class="pure-g relative">
+                            <div class="pure-u-20-24">
+                                <label for="upperAutoFail"></label>
+                                <input id="upperAutoFail" name="" min="0" max="5" class="pure-u-1" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                            </div>
+                            <div class="pure-u-4-24 ">
+                                <div class="pure-g plus-minus">
+                                    <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('upperAutoFail')"></img>
+                                    <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('upperAutoFail')"></img>
+                                </div>
+                            </div>
                         </div>
                         <div class="center">
                             <span>Lower Balls</span>
                         </div>
                         <hr>
-                        <div class="pure-u-1-1">
-                            <label for=""></label>
-                            <input name="BallsLowerAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                        <div class="pure-g relative">
+                            <div class="pure-u-20-24">
+                                <label for=""></label>
+                                <input id="BallsLowerAuto" name="BallsLowerAuto" min="0" max="20" class="pure-u-1" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                            </div>
+                            <div class="pure-u-4-24 ">
+                                <div class="pure-g plus-minus">
+                                    <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('BallsLowerAuto')"></img>
+                                    <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('BallsLowerAuto')"></img>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pure-u-1-1">
-                            <label for=""></label>
-                            <input name="BallsLowerFailAuto" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                        <div class="pure-g relative">
+                            <div class="pure-u-20-24">
+                                <label for=""></label>
+                                <input id="BallsLowerFailAuto" name="BallsLowerFailAuto" min="0" max="20" class="pure-u-1" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                            </div>
+                            <div class="pure-u-4-24 ">
+                                <div class="pure-g plus-minus">
+                                    <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('BallsLowerFailAuto')"></img>
+                                    <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('BallsLowerFailAuto')"></img>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,7 +210,7 @@
                             <input id="reqPosTele" name="TeleopScoring" style="position:relative; z-index:1; margin:0; margin-left:auto;margin-right:auto; top: 20px"> </input>
                             <canvas id="posTele" class="fieldCanvas"> </canvas>
                         </div>
-                        <div class="centerDiv">
+                        <div class="centerDiv" style="margin-bottom: 1em">
                             <button type="button" id="teleSubmit" onclick="parseTeleData();" class="pure-button pure-button-primary">Submit Shots</button>
                         </div>
                     </div>
@@ -175,27 +219,58 @@
                             <span>Upper Balls</span>
                         </div>
                         <hr>
-                        <div class="pure-u-1-1">
-                            <label for=""></label>
-                            <input id="upperTele" name="" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                        <div class="pure-g relative">
+                            <div class="pure-u-20-24">
+                                <label for=""></label>
+                                <input id="upperTele" name="" min="0" max="5" class="pure-u-1" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                            </div>
+                            <div class="pure-u-4-24 ">
+                                <div class="pure-g plus-minus">
+                                    <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('upperTele')"></img>
+                                    <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('upperTele')"></img>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pure-u-1-1">
-                            <label for=""></label>
-                            <input id="upperTeleFail" name="" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                        <div class="pure-g relative">
+                            <div class="pure-u-20-24">
+                                <label for=""></label>
+                                <input id="upperTeleFail" name="" min="0" max="5" class="pure-u-1" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                            </div>
+                            <div class="pure-u-4-24 ">
+                                <div class="pure-g plus-minus">
+                                    <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('upperTeleFail')"></img>
+                                    <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('upperTeleFail')"></img>
+                                </div>
+                            </div>
                         </div>
                         <div class="center">
                             <span>Lower Balls</span>
                         </div>
                         <hr>
-                        <div class="pure-u-1-1">
-                            <label for=""></label>
-                            <input name="lowerTele" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                        <div class="pure-g relative">
+                            <div class="pure-u-20-24">
+                                <label for=""></label>
+                                <input id="BallsLowerTele" name="BallsLowerTele" min="0" max="9" class="pure-u-1" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                            </div>
+                            <div class="pure-u-4-24 ">
+                                <div class="pure-g plus-minus">
+                                    <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('BallsLowerTele')"></img>
+                                    <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('BallsLowerTele')"></img>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pure-u-1-1">
-                            <label for=""></label>
-                            <input name="lowerTeleFail" min="0" max="9" class="pure-u-23-24" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                        <div class="pure-g relative">
+                            <div class="pure-u-20-24">
+                                <label for=""></label>
+                                <input id="BallsLowerTeleFail" name="BallsLowerTeleFail" min="0" max="9" class="pure-u-1" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                            </div>
+                            <div class="pure-u-4-24 ">
+                                <div class="pure-g plus-minus">
+                                    <img src="resources/plus.svg" class="pure-u-1-2 svg" onclick="increase('BallsLowerTeleFail')"></img>
+                                    <img src="resources/minus.svg" class="pure-u-1-2 svg" onclick="decrease('BallsLowerTeleFail')"></img>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </fieldset>

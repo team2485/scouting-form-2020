@@ -11,8 +11,32 @@ body {
     background-color: white
 }
 
-#expandingFall.expand-after {
-    height: 81px;
+@media screen and (min-width: 1000px) {
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+.plus-minus {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 85%;
+}
+
+.svg {
+    max-height: 2em;
+    max-width: 2em;
+    cursor: pointer;
+}
+
+.svg:hover {
+    filter: invert(72%) sepia(59%) saturate(691%) hue-rotate(1deg) brightness(106%) contrast(107%);
+}
+
+.relative {
+    position: relative;
 }
 
 legend {

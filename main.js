@@ -62,6 +62,18 @@ canvasTele.addEventListener("click", function (event) {
     document.getElementById("reqPosTele").value = savedPositionTele;
 });
 
+function increase(id){
+    var ele = document.getElementById(id);
+    if((ele.value || 0 )<ele.max)
+        ele.value++;
+}
+function decrease(id){
+    var ele = document.getElementById(id);
+    if((ele.value || 0 )>ele.min)
+        ele.value--;
+    else
+        ele.value=0;
+}
 
 function parseAutoData() {
     if (savedPositionAuto == "")
