@@ -48,7 +48,7 @@ canvasAuto.addEventListener("click", function (event) {
     resizeCanvas("posAuto");
     canvasAuto2d.drawImage(fieldImage, 0, 0, canvasAuto.scrollWidth, canvasAuto.scrollHeight);
     canvasAuto2d.drawImage(flagImage, event.pageX - canvasAuto.offsetLeft - flagImage.width / 2, event.pageY - canvasAuto.offsetTop - flagImage.height / 2, 40, 40);
-    savedPositionAuto = ((event.pageX - canvasPre.offsetLeft) / canvasPre.width).toFixed(3) + ", " + ((event.pageY - canvasPre.offsetTop) / canvasPre.height).toFixed(3);
+    savedPositionAuto = ((event.pageX - canvasAuto.offsetLeft) / canvasAuto.width).toFixed(3) + ", " + ((event.pageY - canvasAuto.offsetTop) / canvasAuto.height).toFixed(3);
     console.log(event);
     console.log(savedPositionAuto);
 });
@@ -56,7 +56,7 @@ canvasTele.addEventListener("click", function (event) {
     resizeCanvas("posTele");
     canvasTele2d.drawImage(fieldImage, 0, 0, canvasTele.scrollWidth, canvasTele.scrollHeight);
     canvasTele2d.drawImage(flagImage, event.pageX - canvasTele.offsetLeft - flagImage.width / 2, event.pageY - canvasTele.offsetTop - flagImage.height / 2, 40, 40);
-    savedPositionTele = ((event.pageX - canvasPre.offsetLeft) / canvasPre.width).toFixed(3) + ", " + ((event.pageY - canvasPre.offsetTop) / canvasPre.height).toFixed(3);
+    savedPositionTele = ((event.pageX - canvasTele.offsetLeft) / canvasTele.width).toFixed(3) + ", " + ((event.pageY - canvasTele.offsetTop) / canvasTele.height).toFixed(3);
     console.log(event);
     console.log(savedPositionTele);
     document.getElementById("reqPosTele").value = savedPositionTele;
