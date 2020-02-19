@@ -21,8 +21,7 @@ body {
 .plus-minus {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: 85%;
+    transform: translateY(-50%)
 }
 
 .svg {
