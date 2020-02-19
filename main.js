@@ -64,12 +64,12 @@ canvasTele.addEventListener("click", function (event) {
 
 function increase(id){
     var ele = document.getElementById(id);
-    if((ele.value || 0 )<ele.max)
+    if((Number(ele.value) || 0 )<Number(ele.max))
         ele.value++;
 }
 function decrease(id){
     var ele = document.getElementById(id);
-    if((ele.value || 0 )>ele.min)
+    if((Number(ele.value) || 0 )>Number(ele.min))
         ele.value--;
     else
         ele.value=0;
