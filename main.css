@@ -34,10 +34,6 @@ body {
     filter: invert(72%) sepia(59%) saturate(691%) hue-rotate(1deg) brightness(106%) contrast(107%);
 }
 
-.relative {
-    position: relative;
-}
-
 legend {
     font-family: 'Oswald';
     text-transform: uppercase;
