@@ -30,7 +30,7 @@ fieldImage.onload = function () {
 function resizeCanvas(canvasID) {
     var canvas = document.getElementById(canvasID);
     canvas.width = canvas.scrollWidth;
-    canvas.height = canvas.scrollWidth * (364 / 695);
+    canvas.height = canvas.scrollWidth * (362 / 691);
 }
 resizeCanvas("posPre");
 resizeCanvas("posAuto");
