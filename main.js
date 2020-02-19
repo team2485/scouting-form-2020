@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzhRJxAtAKLB1_vzGLINg_CdEE_1ecpq7sO2wE5eWTtVPCketY/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwFYUNte7AJ37U1p6Re9p11O2NvxugyyagKCVsIn0Si7ohbfWU/exec'
 const form = document.forms['mainForm']
 requirements = Array.from(document.querySelectorAll('[required]'));
 requirements.splice(1, 4);
