@@ -31,10 +31,10 @@
                         <a href="#Teleop" class="pure-menu-link" onclick="openBetting('betting', 'form')">Teleop</a>
                     </li>
                     <li class="pure-menu-item">
-                        <a href="#Rating" class="pure-menu-link" onclick="openBetting('betting', 'form')">Rating</a>
+                        <a href="#endGame" class="pure-menu-link" onclick="openBetting('betting', 'form')">Endgame</a>
                     </li>
                     <li class="pure-menu-item">
-                        <a href="#endGame" class="pure-menu-link" onclick="openBetting('betting', 'form')">Endgame</a>
+                        <a href="#Rating" class="pure-menu-link" onclick="openBetting('betting', 'form')">Rating</a>
                     </li>
                     <li class="pure-menu-item">
                         <a href="#other" class="pure-menu-link" onclick="openBetting('betting', 'form')">Other</a>
@@ -54,34 +54,27 @@
                 <legend>
                     <a id="Info">Pre-Match</a>
                 </legend>
-                <div class="pure-g">
-                    <div class="pure-u-1-2 pure-u-sm-1 center">
-                        <div class="centerDiv pure-u-22-24 pure-u-sm-1 centerDiv">
-                            <p class="auto">Starting Point</p>
-                            <input id="reqPosPre" name="StartPosition" required style="position:relative; z-index:1; margin:0; margin-left:auto;margin-right:auto; top: 20px"> </input>
-                            <canvas id="posPre" class="fieldCanvas"> </canvas>
-                        </div>
-                    </div>
-                    <div class="pure-u-1-2 pure-u-sm-1">
-                        <div class="pure-u-1">
+                <div class="pure-g">   
+                    <!-- <div class="pure-u-1-2 pure-u-sm-1"> -->
+                        <div class="pure-u-1-4 pure-u-sm-1">
                             <label for="ScoutName">Scout Name</label>
                             <input id="ScoutName" name="ScoutName" class="pure-u-23-24" type="text" placeholder="Scout Name" required>
                         </div>
-                        <div class="pure-u-1">
+                        <div class="pure-u-1-4 pure-u-sm-1">
                             <label for="ScoutTeamNumber">Your Team #</label>
                             <input id="ScoutTeamNumber" name="ScoutTeamNumber" class="pure-u-23-24" type="number" placeholder="Your Team #" required
                                 max="10000" min="0">
                         </div>
-                        <div class="pure-u-1">
+                        <div class="pure-u-1-4 pure-u-sm-1">
                             <label for="TeamNumber">Team # Scouted</label>
                             <input id="TeamNumber" name="TeamNumber" class="pure-u-23-24" type="number" placeholder="Scout Team #" required max="10000"
                                 min="0">
                         </div>
-                        <div class="pure-u-1">
+                        <div class="pure-u-1-4 pure-u-sm-1">
                             <label for="MatchNumber">Match #</label>
                             <input id="MatchNumber" name="MatchNumber" class="pure-u-23-24" type="number" placeholder="Match #" required max="200" min="0">
                         </div>
-                    </div>
+                    <!-- </div>   -->
                 </div>
                 <!-- <hr>
                 <div class="center">
@@ -130,6 +123,13 @@
                 <hr>
                 <div class="pure-g">
                     <div class="pure-u-1-2 pure-u-sm-1 center">
+                        <div class="centerDiv pure-u-22-24 pure-u-sm-1 centerDiv">
+                            <p class="auto">Starting Point</p>
+                            <input id="reqPosAuto" name="StartPosition" required style="position:relative; z-index:1; margin:0; margin-left:auto;margin-right:auto; top: 20px"> </input>
+                            <canvas id="posAuto" class="fieldCanvas"> </canvas>
+                        </div>
+                    </div>
+                    <!-- <div class="pure-u-1-2 pure-u-sm-1 center">
                         <div class="centerDiv pure-u-22-24 pure-u-sm-1">
                             <p class="auto">Firing Point (High Balls only)</p>
                             <input id="reqPosAuto" name="AutoScoring" style="position:relative; z-index:1; margin:0; margin-left:auto;margin-right:auto; top: 20px"> </input>
@@ -138,7 +138,7 @@
                         <div class="centerDiv" style="margin-bottom: 1em">
                             <button type="button" id="autoSubmit" onclick="parseAutoData();" class="pure-button pure-button-primary">Submit Shots</button>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="pure-u-1-2 pure-u-sm-1">
                         <div class="center">
                             <span>Upper Balls</span>
@@ -147,7 +147,7 @@
                         <div class="pure-g relative">
                             <div class="pure-u-20-24">
                                 <label for="upperAuto"></label>
-                                <input id="upperAuto" name="" min="0" max="5" class="pure-u-1" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                                <input id="upperAuto" name="BallsUpperAuto" min="0" max="50" class="pure-u-1" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
                             </div>
                             <div class="pure-u-4-24 ">
                                 <div class="pure-g plus-minus">
@@ -159,7 +159,7 @@
                         <div class="pure-g relative">
                             <div class="pure-u-20-24">
                                 <label for="upperAutoFail"></label>
-                                <input id="upperAutoFail" name="" min="0" max="5" class="pure-u-1" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                                <input id="upperAutoFail" name="BallsUpperFailAuto" min="0" max="50" class="pure-u-1" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
                             </div>
                             <div class="pure-u-4-24 ">
                                 <div class="pure-g plus-minus">
@@ -206,7 +206,7 @@
                 <div class="pure-g">
                     <div class="pure-u-1-2 pure-u-sm-1 center">
                         <div class="centerDiv pure-u-22-24 pure-u-sm-1">
-                            <p class="auto">Firing Point</p>
+                            <p class="auto">Firing Point for Upper Balls</p>
                             <input id="reqPosTele" name="TeleopScoring" style="position:relative; z-index:1; margin:0; margin-left:auto;margin-right:auto; top: 20px"> </input>
                             <canvas id="posTele" class="fieldCanvas"> </canvas>
                         </div>
@@ -510,9 +510,8 @@
                         <input id="Fall3" class="expanding" name="Fall" type="radio" onclick="document.getElementById('fallInput').value=3"> During Climbing Attempt
                     </label>
                 </div> -->
-                <textarea class="pure-input-1" name="Comments" placeholder="Comments" style="background:#fffff3;"></textarea>
+                <textarea class="pure-input-1" name="" placeholder="Comments" style="background:#fffff3;" id="Comments"></textarea>
             </fieldset>
-            <!-- <button type="submit" class="pure-button pure-button-primary" onclick="betting(bettingScore,'team', 'teamWin')">Submit Data</button> -->
             <button type="submit" id="submitButton" class="pure-button pure-button-primary">Submit Data</button>
             <br />
             <br />
@@ -521,47 +520,5 @@
         <script src="main.js"></script>
 
     </div>
-    <!-- <div class="page-disappear" id="betting" class="page-disappear">
-        <br>
-        <h1>Betting Points:
-            <span id='myScore'></span>
-        </h1>
-        <form id="bettingForm" class="pure-form pure-form-stacked" onsubmit="event.preventDefault();">
-            <div class="pure-g">
-
-
-                </br>
-
-                <div class="pure-u-1-3 pure-u-md-1-3">
-                    <label for="team">Betting: Who's Gonna Win</label>
-                    <select id="team" class="pure-u-23-24">
-                        <option>Choose a Team</option>
-                        <option>Blue</option>
-                        <option>Red</option>
-                    </select>
-                </div>
-            </div>
-            <div class="pure-u-1-3 pure-u-md-1-3">
-                <label for="score">Betting: What Will The Winning Team Score?</label>
-                <input id="score" class="pure-u-23-24" name="score" type="number" min="0" max="600" placeholder="Team Score">
-            </div>
-            <div class="pure-u-1-3 pure-u-md-1-3">
-                <label for="LosingScore">What Will The Losing Team Score?</label>
-                <input id="LosingScore" class="pure-u-23-24" name="LosingScore" type="number" min="0" max="600" placeholder="Losing Score">
-            </div>
-            <legend>Complete at the end of match</legend>
-            <div class="pure-g">
-                <div class="pure-u-1-3 pure-u-md-1-3">
-                    <label for="teamWin">Who Won</label>
-                    <select id="teamWin" class="pure-u-23-24">
-                        <option>Choose a Team</option>
-                        <option>Blue</option>
-                        <option>Red</option>
-                    </select>
-                </div>
-            </div>
-        </form>
-    </div> -->
 </body>
-
 </html>
