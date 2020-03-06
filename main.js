@@ -104,7 +104,7 @@ function parseTeleData() {
     document.getElementById("reqPosTele").value = savedPositionTeleList;
     savedPositionTele = "";
     teleNumber++;
-    document.getElementById("teleSubmit").innerHTML = "Submit Shots (" + teleNumber + " sumbitted)";
+    document.getElementById("teleSubmit").innerHTML = "Submit Shots (" + teleNumber + " submitted)";
 }
 
 form.addEventListener('submit', e => {
