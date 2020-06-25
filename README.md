@@ -1,4 +1,4 @@
-# Team 2485's 2019 FRC Scouting Form Interface
+# Team 2485's 2020 FRC Scouting Form Interface
 
 **_Please do not change the name of the repository, it is very particular._**
 
