@@ -29,6 +29,8 @@ body {
 }
 
 .svg {
+    width: auto;
+    height: 2em;
     max-height: 2em;
     max-width: 2em;
     cursor: pointer;
