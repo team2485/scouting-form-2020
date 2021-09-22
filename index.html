@@ -19,11 +19,11 @@
     <img style="display:inline-block; vertical-align: top; padding-left: 10px; padding-top: 5px; height: 40px" src="resources/icon-on-black.png"></img>
     <ul class="pure-menu-list" style="display:inline-block; vertical-align: top; padding-top: 5px; text-transform: uppercase">
       <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-        <a id="menuLink1" class="pure-menu-link">2021 Scouting</a>
+        <a id="menuLink1" class="pure-menu-link">2021 BATB Scouting</a>
         <ul class="pure-menu-children">
-          <li class="pure-menu-item">
+          <!-- <li class="pure-menu-item">
             <a href="#stats" class="pure-menu-link" onclick="openBetting('betting', 'form')">Resources</a>
-          </li>
+          </li> -->
           <li class="pure-menu-item">
             <a href="#Info" class="pure-menu-link" onclick="openBetting('betting', 'form')">Pre-Match</a>
           </li>
@@ -54,13 +54,13 @@
   <div class="page-display form-display" id="form">
     <form id="mainForm" class="pure-form pure-form-stacked container" name="mainForm">
       <fieldset id="pre">
-        <legend>
+        <!-- <legend>
           <a id="stats">Resources</a>
         </legend>
 
         <a href="interface.html">Web Interface</a>
         <br>
-        <a href="https://docs.google.com/spreadsheets/d/1mTckmnCFqT8uu4yJhCqddeKZt6YKeS0fuAshcJDdyKY/edit?usp=sharing">Scout Schedule</a>
+        <a href="https://docs.google.com/spreadsheets/d/1mTckmnCFqT8uu4yJhCqddeKZt6YKeS0fuAshcJDdyKY/edit?usp=sharing">Scout Schedule</a> -->
 
         <legend>
           <a id="Info">Pre-Match</a>
@@ -235,7 +235,7 @@ REMOVING LOCATION TRACKER (#2)
             <div class="pure-g relative">
               <div class="pure-u-20-24">
                 <label for=""></label>
-                <input id="upperTele" name="" min="0" max="5" class="pure-u-1" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
+                <input id="upperTele" name="" min="0" max="50" class="pure-u-1" type="number" placeholder="Successful Balls" style="background: #f3fff3;">
               </div>
               <div class="pure-u-4-24 ">
                 <div class="pure-g plus-minus">
@@ -247,7 +247,7 @@ REMOVING LOCATION TRACKER (#2)
             <div class="pure-g relative">
               <div class="pure-u-20-24">
                 <label for=""></label>
-                <input id="upperTeleFail" name="" min="0" max="5" class="pure-u-1" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
+                <input id="upperTeleFail" name="" min="0" max="50" class="pure-u-1" type="number" placeholder="Missed Balls" style="background: #fff3f3;">
               </div>
               <div class="pure-u-4-24 ">
                 <div class="pure-g plus-minus">
@@ -287,6 +287,7 @@ REMOVING LOCATION TRACKER (#2)
               </div>
             </div>
           </div>
+          <!--
           <div class="pure-u-2-3 pure-u-sm-1 center">
             <br />
             <div class="center">
@@ -308,6 +309,7 @@ REMOVING LOCATION TRACKER (#2)
               </div>
             </div>
           </div>
+        -->
         </div>
       </fieldset>
       <div class="pure-g">
@@ -344,6 +346,9 @@ REMOVING LOCATION TRACKER (#2)
         <fieldset class="pure-u-2-3 pure-u-md-1 center" id="qual">
           <legend>
             <a id="Rating">Qualitative Ratings</a>
+            <div class="tooltip">*
+              <span class="tooltiptext" style="font-size: .6em">There is intentionally no middle ground, so please choose Above Average or Below Average.</span>
+            </div>
           </legend>
           <div>
             <div>
@@ -427,7 +432,7 @@ REMOVING LOCATION TRACKER (#2)
               </fieldset>
               <div class="button-secondary pure-button" onclick="deselect('ClimbSub'); starInput('Climb', 0)">Clear</div>
             </div>
-            <div class="rating-outer">
+            <!-- <div class="rating-outer">
               <legend class="s-legend">Control Panel</legend>
               <fieldset class="rating relative">
                 <input id="ControlPanel" name="ControlPanel" type="number" value="0" class="hiddenInput" tabindex="-1" min="0" max="6">
@@ -445,7 +450,7 @@ REMOVING LOCATION TRACKER (#2)
                 <label class="full" for="starPanel1" title="Incapable - 1 star"></label>
               </fieldset>
               <div class="button-secondary pure-button" onclick="deselect('ControlPanelSub'); starInput('ControlPanel', 0)">Clear</div>
-            </div>
+            </div> -->
             <div class="rating-outer">
               <legend class="s-legend">Non-Ground Intake</legend>
               <fieldset class="rating relative">
