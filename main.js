@@ -150,7 +150,7 @@ form.addEventListener('submit', e => {
   document.getElementById("submitButton").innerHTML = "Submitting " + loadingElement;
 
   var data = new FormData(form);
-  ["BallsUpperAuto", "BallsUpperFailAuto", "BallsLowerAuto", "BallsLowerFailAuto", "BallsLowerTele", "BallsLowerFailTele"].forEach(id => setdefault(data, id));
+  ["BallsUpperAuto", "BallsUpperFailAuto", "BallsLowerAuto", "BallsLowerFailAuto", "BallsLowerTele", "BallsLowerFailTele", "BallsUpperTele", "BallsUpperFailTele"].forEach(id => setdefault(data, id));
   data.append("Comments", "'" + document.getElementById("Comments").value.replace(/(\r\n|\n|\r)/gm, "; ")); // Replace newlines and other naught characters
   data.set("ScoutName", "\'" + data.get("ScoutName"));
   fetch(scriptURL, {
